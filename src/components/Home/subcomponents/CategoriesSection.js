@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { categoriesConstants } from "../../constants/homeConstants";
+import { categoriesConstants } from "../../../constants/homeConstants";
 
-import HeroSection from "./subcomponents/HeroSection";
-import CategoriesSection from "./subcomponents/CategoriesSection";
-
-export default class Home extends Component {
-  renderCategoriesSection() {
+export default class Categoriessection extends Component {
+  renderCategories() {
     return categoriesConstants.map((item) => {
       return (
         <div className="col-lg-3 col-md-6 col-sm-6">
@@ -25,10 +22,11 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <HeroSection />
-        <CategoriesSection />
-      </div>
+      <section className="categories spad">
+        <div className="container">
+          <div className="row">{this.renderCategories()}</div>
+        </div>
+      </section>
     );
   }
 }
